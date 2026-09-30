@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sahil Verma | Data & Analytics</title>
+<meta name="description" content="Sahil Verma, MCA (Data Science) student in Jaipur. SQL, Python, Power BI, Tableau, statistics and reporting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f8fa; --surface:#ffffff; --ink:#1b2430; --muted:#586373; --rule:#dde2e8; --accent:#2a5aa7; --accent-soft:#e8eef8;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --wrap:1040px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.2;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(247,248,250,.96);border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--ink);text-decoration:none}
+nav ul{display:flex;gap:28px}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent}
+nav a:hover{color:var(--ink)}
+nav a.active{color:var(--ink);border-color:var(--accent)}
+.menu-btn{display:none;background:none;border:1px solid var(--rule);border-radius:6px;padding:7px 12px;font:inherit;font-size:.9rem;color:var(--ink);cursor:pointer}
+
+/* sections */
+section{padding:72px 0;border-top:1px solid var(--rule)}
+section:first-of-type{border-top:0}
+.sec-head{margin-bottom:36px}
+.sec-head h2{font-size:1.75rem}
+.grid{display:grid;grid-template-columns:200px 1fr;gap:40px}
+
+/* hero */
+.hero{padding:88px 0 72px}
+.hero h1{font-size:clamp(2.4rem,6vw,3.75rem);letter-spacing:-.01em}
+.hero .role{margin-top:14px;font-size:1.15rem;color:var(--muted)}
+.hero .summary{margin-top:28px;max-width:62ch;font-size:1.08rem}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-block;padding:11px 20px;border-radius:6px;font-weight:500;font-size:.95rem;text-decoration:none;border:1px solid var(--accent);transition:background .15s,color .15s}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.primary:hover{background:#204a8a}
+.btn.ghost{color:var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
+.facts{margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;padding-top:28px;border-top:1px solid var(--rule)}
+.facts dt{font-size:.85rem;color:var(--muted)}
+.facts dd{margin:2px 0 0;font-weight:500}
+
+/* skills */
+.skill-row{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:22px 0;border-top:1px solid var(--rule)}
+.skill-row:first-of-type{border-top:0;padding-top:0}
+.skill-row h3{font-family:var(--sans);font-size:1rem;font-weight:600}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags li{background:var(--surface);border:1px solid var(--rule);border-radius:5px;padding:4px 11px;font-size:.92rem}
+
+/* experience + projects */
+.entry{background:var(--surface);border:1px solid var(--rule);border-radius:8px;padding:28px}
+.entry-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px 24px}
+.entry h3{font-size:1.25rem}
+.meta{color:var(--muted);font-size:.93rem}
+.entry ul{margin-top:18px;padding-left:1.1rem;list-style:disc}
+.entry li{margin-top:8px;max-width:75ch}
+.entry li::marker{color:var(--accent)}
+.stack{margin-top:18px}
+.entry + .entry{margin-top:20px}
+.note{margin-top:20px;color:var(--muted);font-size:.95rem}
+
+/* education */
+.edu + .edu{margin-top:28px;padding-top:28px;border-top:1px solid var(--rule)}
+.edu h3{font-size:1.2rem}
+.edu p{margin-top:4px}
+
+/* contact */
+.contact-list li{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-top:1px solid var(--rule)}
+.contact-list li:first-child{border-top:0;padding-top:0}
+.contact-list span{color:var(--muted)}
+.contact-list a{word-break:break-word}
+footer{border-top:1px solid var(--rule);padding:28px 0;color:var(--muted);font-size:.9rem}
+
+/* single, quiet reveal: hero on load */
+@media (prefers-reduced-motion:no-preference){
+  .hero .wrap>*{animation:in .5s ease both}
+  .hero .role{animation-delay:.08s}.hero .summary{animation-delay:.16s}.hero .btns{animation-delay:.24s}.hero .facts{animation-delay:.32s}
+  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+@media (max-width:820px){
+  .grid,.skill-row{grid-template-columns:1fr;gap:12px}
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:60px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--rule)}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 24px 16px}
+  nav a{display:block;padding:12px 0;border-bottom:0}
+  section{padding:56px 0}
+  .hero{padding:56px 0 48px}
+  .entry{padding:20px}
+  .contact-list li{grid-template-columns:1fr;gap:2px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top">Sahil Verma</a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="about">
+    <div class="wrap">
+      <h1>Sahil Verma</h1>
+      <p class="role">Data and analytics graduate, MCA (Data Science) student</p>
+      <p class="summary">Data Analyst pursuing an MCA in Data Science with strong hands-on experience in SQL, Python, Power BI, and Tableau. Experienced in cleaning messy datasets, discovering trends through exploratory data analysis, and developing interactive dashboards for business stakeholders. Solid practical background in statistical analysis, machine learning models, and executive reporting.</p>
+      <div class="btns">
+        <a class="btn primary" href="mailto:sahilpotter045@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/sahil-verma-33b499326/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/sahilverma-DA" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Jaipur, Rajasthan, India</dd></div>
+        <div><dt>Currently</dt><dd>MCA, Data Science (2025 to present)</dd></div>
+        <div><dt>Open to</dt><dd>Analyst, reporting, SQL and data internship or entry-level roles</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2>Skills</h2></div>
+      <div class="skill-row"><h3>Programming and data</h3>
+        <ul class="tags"><li>Python</li><li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>Matplotlib</li><li>Seaborn</li></ul></div>
+      <div class="skill-row"><h3>Databases</h3>
+        <ul class="tags"><li>SQL</li><li>MySQL</li><li>PostgreSQL</li></ul></div>
+      <div class="skill-row"><h3>Business intelligence</h3>
+        <ul class="tags"><li>Power BI</li><li>DAX</li><li>Data Modeling</li><li>Power Query</li><li>Tableau</li><li>Microsoft Excel</li><li>Pivot Tables</li><li>Lookups</li></ul></div>
+      <div class="skill-row"><h3>Analytics</h3>
+        <ul class="tags"><li>Data Cleaning</li><li>Exploratory Data Analysis</li><li>Statistical Analysis</li><li>Hypothesis Testing</li><li>A/B Testing</li><li>Machine Learning</li><li>KPI Dashboards</li><li>Business Reporting</li></ul></div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head"><h2>Experience</h2></div>
+      <article class="entry">
+        <div class="entry-top">
+          <h3>Freelance Data Analyst, Sales Analytics Project</h3>
+          <p class="meta">Dec 2024 to Feb 2025 &middot; Jaipur, India</p>
+        </div>
+        <ul>
+          <li>Consolidated and cleaned over 50,000 raw sales transactions across multiple spreadsheets and SQL tables to build a reliable single source of truth.</li>
+          <li>Identified seasonal sales spikes and underperforming categories through EDA in Python, improving client inventory planning.</li>
+          <li>Built an interactive Power BI dashboard tracking monthly revenue, gross margins, and regional sales performance for executive review.</li>
+          <li>Delivered data presentations to stakeholders, highlighting actionable ways to reduce excess inventory and focus on high-margin products.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head"><h2>Projects</h2></div>
+      <article class="entry">
+        <div class="entry-top">
+          <h3>Customer Churn Prediction and Retention Model</h3>
+          <p class="meta">May 2025</p>
+        </div>
+        <ul class="tags stack" style="list-style:none;padding:0;margin-top:14px"><li>Python</li><li>Scikit-learn</li><li>SQL</li></ul>
+        <ul>
+          <li>Processed customer usage datasets by handling missing values and encoding categorical variables to prepare them for modelling.</li>
+          <li>Trained and evaluated classification models in Scikit-learn to identify customers likely to leave.</li>
+        </ul>
+      </article>
+      <p class="note">More work is available on <a href="https://github.com/sahilverma-DA" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap">
+      <div class="sec-head"><h2>Education</h2></div>
+      <div class="edu">
+        <h3>Master of Computer Applications (MCA), Data Science</h3>
+        <p>Compucom Institute of Technology and Management (CITM), Jaipur</p>
+        <p class="meta">Aug 2025 to present</p>
+      </div>
+      <div class="edu">
+        <h3>Bachelor of Computer Applications (BCA), Data Science</h3>
+        <p>Parishkar College of Global Excellence, Jaipur</p>
+        <p class="meta">Sep 2022 to Jun 2025 &middot; Major: Data Science &middot; Minor: Machine Learning</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>Contact</h2>
+        <p class="meta" style="margin-top:10px;font-size:1rem">Open to internships and entry-level roles. Email is the fastest way to reach me.</p></div>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:sahilpotter045@gmail.com">sahilpotter045@gmail.com</a></li>
+        <li><span>Phone</span><a href="tel:+918302028260">+91 8302028260</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/sahil-verma-33b499326/" target="_blank" rel="noopener">linkedin.com/in/sahil-verma-33b499326</a></li>
+        <li><span>GitHub</span><a href="https://github.com/sahilverma-DA" target="_blank" rel="noopener">github.com/sahilverma-DA</a></li>
+        <li><span>Location</span>Jaipur, Rajasthan, India</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr"></span> Sahil Verma</div></footer>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('nav');
+  function setMenu(open){ nav.classList.toggle('open', open); btn.setAttribute('aria-expanded', open); }
+  btn.addEventListener('click', function(){ setMenu(!nav.classList.contains('open')); });
+  nav.addEventListener('click', function(e){ if (e.target.tagName === 'A') setMenu(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setMenu(false); });
+
+  var links = [].slice.call(nav.querySelectorAll('a'));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+  function spy(){
+    var y = window.scrollY + 120, cur = 0;
+    secs.forEach(function(s,i){ if (s && s.offsetTop <= y) cur = i; });
+    links.forEach(function(a,i){ a.classList.toggle('active', i === cur); });
+  }
+  window.addEventListener('scroll', spy, {passive:true}); spy();
+})();
+</script>
+</body>
+</html>
